@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:grocery_shop_app/model/cart_model.dart';
 import 'package:provider/provider.dart';
@@ -22,7 +20,7 @@ class CartPage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 24),
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
                   child: Text(
                     'My Cart',
                     style: GoogleFonts.notoSerif(
@@ -48,7 +46,7 @@ class CartPage extends StatelessWidget {
                               height: 36,
                             ),
                             title: Text(value.cartItems[index][0]),
-                            subtitle: Text('\$$value.cartItems[index][1]'),
+                            subtitle: Text('\$' + value.cartItems[index][1]),
                             trailing: IconButton(
                                 onPressed: () {
                                   Provider.of<CartModel>(context, listen: false)
@@ -67,7 +65,7 @@ class CartPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.green,
                         borderRadius: BorderRadius.circular(12)),
-                    padding: const EdgeInsets.all(8),
+                    padding: const EdgeInsets.all(24),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -96,6 +94,7 @@ class CartPage extends StatelessWidget {
                           decoration: BoxDecoration(
                               border: Border.all(color: Colors.green.shade100),
                               borderRadius: BorderRadius.circular(12)),
+                          padding: EdgeInsets.all(10),
                           child: Row(
                             children: [
                               Text(

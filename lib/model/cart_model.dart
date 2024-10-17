@@ -14,6 +14,7 @@ class CartModel extends ChangeNotifier {
   void addItemsToCart(int index) {
     _cartItems.add(_shopItems[index]);
     notifyListeners();
+    print('added');
   }
 
   void removeItemfromCart(int index) {
